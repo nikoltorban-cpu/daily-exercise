@@ -44,4 +44,41 @@ while True:
         name = input("please enter a valid name: ")
     else:
         print("thank you")
-        break   
+        break  
+
+    #favorite fruits
+favorite_fruits = input("what are your favorite fruits? (separate them with a space) ")
+favorite_fruits_list = favorite_fruits.split()
+input_fruit = input("name a fruit ")
+if input_fruit in favorite_fruits_list:
+    print("you chose one of your favorite fruits! enjoy!")
+else:    print("you chose a new fruit. I hope you enjoy")
+
+#pizza toppings
+pizza_toppings = []
+while True:
+    topping = input("enter a pizza topping (type 'quit' to stop) ")
+    if topping.lower() == "quit":
+        break
+    pizza_toppings.append(topping)
+print("adding " + topping + " to your pizza")
+
+cost = 10 + 2.5 * len(pizza_toppings)
+print("your total cost is: " + str(cost))
+
+#cinema tickets
+while True:
+    ticket_cost = 0
+    age = int(input("what's your age? (type -1 to stop) "))
+    if age == -1:
+        break
+    elif age < 3:
+        print("your ticket is free")
+    elif 3 <= age <= 12:
+        ticket_cost = ticket_cost + 10
+        print("your ticket is $10")
+    else:
+        ticket_cost = ticket_cost + 15
+        print("your ticket is $15")
+
+print("your total ticket cost is: $" + str(ticket_cost))
