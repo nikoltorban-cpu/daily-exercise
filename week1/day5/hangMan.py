@@ -80,7 +80,7 @@ wordslist = ['correction', 'childish', 'beach', 'python', 'assertive', 'interfer
 word = random.choice(wordslist)
 mistakes = 0
 print_word(word)
-new_guess = [" "] * len(word)
+new_guess = ["_ "] * len(word)
 while mistakes < 6:
     if mistakes == 0:
         print(hangman_stages[0])
