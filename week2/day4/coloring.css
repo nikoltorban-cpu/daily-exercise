@@ -1,0 +1,148 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  background-color: #f0f0f0;
+}
+
+    #clear {
+    width: 250px;
+    height: 90px;
+    margin-top: 15px;
+    background-color: lightgray;
+    border: 1px solid black;
+    cursor: pointer;
+    }
+
+    #red { 
+    background-color: red;
+     width:100px; 
+     height: 100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #blue { 
+    background-color: blue;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #green { 
+    background-color: green;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #orange { 
+    background-color: orange;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #black { 
+    background-color: black;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #white { 
+    background-color: white;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #purple { 
+    background-color: purple;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #lightblue { 
+    background-color: lightblue;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #lightpink{ 
+    background-color: lightpink;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #lightgreen { 
+    background-color: lightgreen;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #yellow { 
+    background-color: yellow;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+    #lightcoral { 
+    background-color: lightcoral;
+     width:100px; 
+     height:100px; 
+     margin:5px; 
+     border:1px solid #999;
+     cursor:pointer; 
+    }
+
+
+
+#sidebar {
+  width: 300px;           
+  padding: 10px;
+  background: #fff;
+  border-right: 1px solid #ccc;
+
+  display: flex;
+  flex-wrap: wrap;        
+  gap: 10px;
+}
+
+
+#myCanvas {
+  margin-left: 140px;    
+  background-color: white;
+  border: 2px solid #333;
+  width: 1000px;
+  height: 1000px;
+}
