@@ -54,7 +54,7 @@ def show_options():
     print("4. Delete Item")
     print("5. Exit")
     print("6. Search Item")
-    print("7. Apply Discount")
+    print("7. Apply Discount") #it wasnt in the challenge but it was easier to check this way
     print()
 
 def run_coffee_shop():
