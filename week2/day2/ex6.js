@@ -11,3 +11,5 @@ ul.appendChild(newLi);
 let firstUl = ul.firstElementChild.textContent;
 let lastUl = ul.lastElementChild.textContent;
 console.log(firstUl, lastUl);
+
+
