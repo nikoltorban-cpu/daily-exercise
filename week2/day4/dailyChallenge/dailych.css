@@ -1,26 +1,81 @@
 body {
-  background-color: #fb92ed; }
+  background-color: #faeefa; 
+
+  .listTasks {
+    width: 500px;
+    height: 700px;
+    background-color: rgb(235, 235, 235);
+    margin-top: 18px; 
+    margin-left: 70px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: 1px solid rgb(178, 178, 178);
+    cursor: pointer;
+  }
+
+  .tasks {
+    width: 470px;
+    height: 610px;
+    background-color: rgb(253, 217, 249);
+    margin-top: 80px; 
+    margin-left: 71px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: 1px solid rgb(178, 178, 178);
+    padding: 10px;
+  }
+
 
   #submit {
-    margin-top: 500px;
-    margin-left: 100px;
+    margin-top: 20px; 
+    margin-left: 235px;
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px 20px;
-    font-size: 16px;
-    background-color: #acfeaf;
+    font-size: 15px;
     color: rgb(0, 0, 0);
+    background-color:#f98beb;
     border: none;
     border-radius: 5px;
     cursor: pointer; 
     position: absolute;
+    border: 1px solid #ccc;
   }
 
     #submit:hover {
-        background-color: #5d9d60;
+        background-color: #c462c6;
 
     }
 
+    li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    font-size: 18px;
+    }
+
+
+  .taskLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
     #clear {
-      margin-top: 500px;
+      margin-top: 660px;
+      margin-left: 369px;
+      width: 450px;
       padding: 10px 20px;
       font-size: 16px;
       background-color: #aae9f9;
@@ -29,6 +84,7 @@ body {
       border-radius: 5px;
       cursor: pointer; 
       position: absolute;
+      transform: translateX(50%);
     }
 
     #clear:hover {
@@ -43,4 +99,8 @@ body {
       border-radius: 5px;
       width: 300px; 
       position: absolute;
+      top: 20px;
+      left: 49%;
+      transform: translateX(-50%);
     }
+  }
