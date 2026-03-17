@@ -6,3 +6,4 @@ class Person {
 
 const member = new Person('John');
 console.log(typeof member); //output: object
+

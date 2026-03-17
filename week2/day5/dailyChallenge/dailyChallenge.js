@@ -22,4 +22,4 @@ const cloneGroceries = () => {
 };
 
 cloneGroceries();
-console.log(groceries);
+console.log(groceries); // the shopping variable does change the groceries object, as they are connected together

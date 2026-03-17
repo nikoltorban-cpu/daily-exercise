@@ -1,4 +1,4 @@
-const colors = ["Blue", "Green", "Red", "Orange", "Violeta", "Indigo", "Yellow"];
+const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 
 colors.forEach((color, index) => console.log(`${index}# choice is ${color}`));
 

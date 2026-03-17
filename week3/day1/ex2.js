@@ -12,7 +12,7 @@ colors.forEach((color, index) => {
             console.log(`${index+1}${ordinal[3]} choice is ${color}`)
             break;
         default:
-            console.log(`${index+1}${ordinal[0]} choice is ${color} `)
+            console.log(`${index+1}${ordinal[0]} choice is ${color}`)
 
     }
 })

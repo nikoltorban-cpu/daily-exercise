@@ -66,11 +66,11 @@ body {
     }
 
 
-  .taskLeft {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    .taskLeft {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     #clear {
       margin-top: 660px;
