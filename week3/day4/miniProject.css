@@ -33,6 +33,7 @@ body {
 }
 
 #robotsContainer div:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
+  transform: scale(1.1);
+  transition: all 0.5s;
+  background: linear-gradient(135deg, #fae9c4, #fad0c4,#ff9a9e );
 }
