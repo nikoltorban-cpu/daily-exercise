@@ -11,7 +11,7 @@ async function newPerson() {
   const id = Math.floor(Math.random() * 83) + 1;
   
   try {
-    const response = await fetch(`https://www.swapi.tech/api/people/${id}/`);
+    const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
       
     if (!response.ok) {
       throw new Error("failed to load");
