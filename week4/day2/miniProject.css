@@ -49,6 +49,7 @@ h1{
     left: 34%;
     top: 30%;
     font-size: 120px;
+    display: none;
 }
 
 button {
@@ -60,11 +61,11 @@ button {
     left: 42%;
     bottom: 13%;
     background: linear-gradient(135deg, #0038c7, #00c4d2,#9a00ce );
+    transition: 0.5s;
 
 }
 
 button:hover {
     transform: scale(1.1);
-  transition: 0.5s;
   background: linear-gradient(135deg, #3971ff, #57f4ff,#d350ff );
 }

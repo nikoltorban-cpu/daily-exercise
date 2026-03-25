@@ -2,40 +2,42 @@ const div = document.querySelector('.content');
 const btn = document.getElementById('findPerson');
 const loader = document.querySelector('.loader');
 
-loader.style.display = "none";
-
 btn.addEventListener('click', newPerson);
 
-function newPerson() {
+async function newPerson() {
   div.innerHTML = "";
   loader.style.display = "block"; 
-
+  
   const id = Math.floor(Math.random() * 83) + 1;
+  
+  try {
+    const response = await fetch(`https://www.swapi.tech/api/people/${id}/`);
+      
+    if (!response.ok) {
+      throw new Error("failed to load");
+    }
 
-  setTimeout(() => {
-    fetch(`https://www.swapi.tech/api/people/${id}/`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("failed to load");
-        }
-        return response.json();
-      })
-      .then(data => {
-        loader.style.display = "none"; 
+    const data = await response.json();
+    const person = data.result.properties;
 
-        const person = data.result.properties;
+    const homeWorldPromise = (await fetch(person.homeworld));
+    const home = await homeWorldPromise.json();
+    const nameOfHomeWorld = home.result.properties.name;
+      
+    loader.style.display = "none"; 
 
         div.innerHTML = `
           <h2>${person.name}</h2>
           <p>Birth Year: ${person.birth_year}</p>
           <p>Gender: ${person.gender}</p>
           <p>Height: ${person.height}</p>
+          <p>Home World: ${nameOfHomeWorld}</p>
         `;
-      })
-      .catch(error => {
+    
+      } catch (error) {
         loader.style.display = "none";
-        console.log("didn't find a person");
-      });
+        div.innerHTML = `<h2>Oh No! That person isn't available..</h2>`;
+      }
 
-  }, 1000);
 }
+  
