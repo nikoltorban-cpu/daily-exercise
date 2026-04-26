@@ -41,3 +41,8 @@ CREATE DATABASE public
 	SELECT * FROM customers WHERE lastName = 'Smith';
 	SELECT * FROM customers WHERE lastName = 'Jones';
 	SELECT * FROM customers WHERE lastName <> 'Scott';
+
+	SELECT * FROM items ORDER BY price ASC;
+	SELECT * FROM items WHERE price >= 80 ORDER BY price DESC;
+	SELECT firstName, lastName FROM customers ORDER BY firstName ASC LIMIT 3;
+	SELECT lastName FROM customers ORDER BY lastName DESC;
