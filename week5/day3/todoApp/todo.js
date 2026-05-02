@@ -15,7 +15,7 @@ export class TodoList {
   completeTask(index) {
     if (this.tasks[index]) {
       this.tasks[index].completed = true;
-    }
+    }``
   }
 
   listTasks() {

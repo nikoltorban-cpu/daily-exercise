@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../hackathon"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../week4"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "hackathon"
+	}
+}
