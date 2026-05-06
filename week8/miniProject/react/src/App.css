@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quoteDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 700px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.quote {
+  font-size: 37px;
+  text-align: center;
+  width: 80%;
+  transition: color 0.7s ease;
+}
+
+.author{
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 1px 1px 5px gray;
+  transition: color 0.7s ease;
+}
+
+.button{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 30px;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family:'Times New Roman', Times, serif;
+  color: white;
+  transition:
+    background-color 0.5s ease,
+    filter 0.3s ease;
+}
+
+.button:hover {
+  filter:brightness(120%);
+}
