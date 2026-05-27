@@ -1,0 +1,47 @@
+{
+  "SocialMedias": ["Facebook", "Twitter", "Instagram"],
+
+  "Skills": [
+    {
+      "Area": "Frontend",
+      "SkillSet": [
+        {
+          "Name": "React"
+        },
+        {
+          "Name": "Redux"
+        }
+      ]
+    },
+    {
+      "Area": "Backend",
+      "SkillSet": [
+        {
+          "Name": "Node.js"
+        },
+        {
+          "Name": "Express"
+        }
+      ]
+    }
+  ],
+
+  "Experiences": [
+    {
+      "companyName": "Google",
+      "roles": [
+        {
+          "title": "Software Engineer"
+        }
+      ]
+    },
+    {
+      "companyName": "Meta",
+      "roles": [
+        {
+          "title": "Frontend Developer"
+        }
+      ]
+    }
+  ]
+}
