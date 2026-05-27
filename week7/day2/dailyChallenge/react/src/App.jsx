@@ -1,0 +1,46 @@
+import { useState } from "react";
+
+import "./App.css";
+
+function App() {
+  const [languages, setLanguages] = useState([
+    { name: "Php", votes: 0 },
+    { name: "Python", votes: 0 },
+    { name: "JavaScript", votes: 0 },
+    { name: "Java", votes: 0 },
+  ]);
+
+  const addVote = (index) => {
+    const updatedLanguages = [...languages];
+
+    updatedLanguages[index].votes += 1;
+
+    setLanguages(updatedLanguages);
+  };
+
+  return (
+    <div className="App">
+      <h1>Vote Your Language!</h1>
+
+      {languages.map((language, index) => (
+        <div
+          key={index}
+          style={{
+            border: "1px solid black",
+            padding: "20px",
+            margin: "10px",
+            width: "300px",
+          }}
+        >
+          <h2>{language.name}</h2>
+
+          <p>Votes: {language.votes}</p>
+
+          <button onClick={() => addVote(index)}>Click Here</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
