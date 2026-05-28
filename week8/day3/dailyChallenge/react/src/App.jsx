@@ -1,122 +1,138 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { selectDay, addTask, editTask, deleteTask } from "./plannerSlice";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+
+  const { selectedDay, tasksByDay } = useSelector((state) => state.planner);
+
+  const [taskText, setTaskText] = useState("");
+
+  const [editingId, setEditingId] = useState(null);
+
+  const [editingText, setEditingText] = useState("");
+
+  const tasks = tasksByDay[selectedDay] || [];
+
+  const handleAddTask = () => {
+    if (!taskText.trim()) return;
+
+    dispatch(
+      addTask({
+        day: selectedDay,
+        text: taskText,
+      }),
+    );
+
+    setTaskText("");
+  };
+
+  const handleEditTask = (id) => {
+    dispatch(
+      editTask({
+        day: selectedDay,
+        id,
+        newText: editingText,
+      }),
+    );
+
+    setEditingId(null);
+
+    setEditingText("");
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div
+      style={{
+        padding: "20px",
+        fontFamily: "Arial",
+      }}
+    >
+      <h1>📅 Daily Planner</h1>
 
-      <div className="ticks"></div>
+      <input
+        type="date"
+        value={selectedDay}
+        onChange={(e) => dispatch(selectDay(e.target.value))}
+      />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <hr />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <h2>Tasks for {selectedDay}</h2>
+
+      <input
+        type="text"
+        placeholder="New task..."
+        value={taskText}
+        onChange={(e) => setTaskText(e.target.value)}
+      />
+
+      <button onClick={handleAddTask}>Add Task</button>
+
+      <div
+        style={{
+          marginTop: "20px",
+        }}
+      >
+        {tasks.length === 0 ? (
+          <p>No tasks for this day.</p>
+        ) : (
+          tasks.map((task) => (
+            <div
+              key={task.id}
+              style={{
+                border: "1px solid gray",
+                padding: "10px",
+                marginBottom: "10px",
+              }}
+            >
+              {editingId === task.id ? (
+                <>
+                  <input
+                    type="text"
+                    value={editingText}
+                    onChange={(e) => setEditingText(e.target.value)}
+                  />
+
+                  <button onClick={() => handleEditTask(task.id)}>Save</button>
+                </>
+              ) : (
+                <>
+                  <p>{task.text}</p>
+
+                  <button
+                    onClick={() => {
+                      setEditingId(task.id);
+
+                      setEditingText(task.text);
+                    }}
+                  >
+                    Edit
+                  </button>
+                </>
+              )}
+
+              <button
+                onClick={() =>
+                  dispatch(
+                    deleteTask({
+                      day: selectedDay,
+                      id: task.id,
+                    }),
+                  )
+                }
+              >
+                Delete
+              </button>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

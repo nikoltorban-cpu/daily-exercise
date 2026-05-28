@@ -25,7 +25,7 @@ const plannerSlice = createSlice({
         }, 
         editTask: (state, action) => {
             const { day, id, newText} = action.payload;
-            const tasks = state.tasksByDay[day]?.find(
+            const task = state.tasksByDay[day]?.find(
                 task => task.id === id
             );
 
